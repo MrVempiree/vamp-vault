@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vamp-vault — Vempire Notes Vault</title>
+  <meta name="description" content="A client-side encrypted notes vault. Your notes are sealed with your passphrase and never leave your browser.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="hero glass">
+      <p class="eyebrow">Vempire presents</p>
+      <h1>🦇 vamp-vault</h1>
+      <p class="tagline">Seal your notes in the crypt. AES-GCM encryption with a PBKDF2-derived key — everything happens in your browser, nothing is sent anywhere.</p>
+    </header>
+
+    <section class="glass panel" aria-labelledby="seal-heading">
+      <h2 id="seal-heading">Seal a note</h2>
+      <label for="passphrase">Passphrase</label>
+      <input id="passphrase" type="password" autocomplete="current-password" placeholder="Choose a strong passphrase">
+      <label for="note-title">Title</label>
+      <input id="note-title" type="text" placeholder="Midnight thoughts">
+      <label for="note-body">Note</label>
+      <textarea id="note-body" rows="6" placeholder="Write what must stay secret…"></textarea>
+      <div class="row">
+        <button id="save-note" type="button">Encrypt &amp; save</button>
+        <button id="export-vault" type="button" class="ghost">Export vault JSON</button>
+        <label class="import-label" for="import-vault">Import vault</label>
+        <input id="import-vault" type="file" accept="application/json,.json" hidden>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="glass panel" aria-labelledby="vault-heading">
+      <h2 id="vault-heading">Your vault</h2>
+      <ul id="note-list" class="note-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <p>Built by Lavish Gangwar (Vempire). Forgotten passphrases cannot be recovered — that is the point.</p>
+    </footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

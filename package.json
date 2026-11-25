@@ -1,0 +1,1 @@
+{"author":"Lavish Gangwar","description":"A client-side encrypted notes vault — seal notes with a passphrase using WebCrypto (PBKDF2 + AES-GCM), with encrypted JSON export/import.","license":"MIT","name":"vamp-vault","private":true,"scripts":{"test":"node --test"},"type":"module","version":"1.0.0"}
